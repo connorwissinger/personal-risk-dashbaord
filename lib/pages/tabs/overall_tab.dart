@@ -131,7 +131,7 @@ class OverallRiskCard extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              riskColor.withOpacity(0.22),
+              riskColor.withValues(alpha: 0.22),
               cs.surfaceContainerHighest,
             ],
           ),
@@ -149,7 +149,7 @@ class OverallRiskCard extends StatelessWidget {
                 ),
                 Chip(
                   label: Text(_label),
-                  backgroundColor: riskColor.withOpacity(0.15),
+                  backgroundColor: riskColor.withValues(alpha: 0.15),
                 ),
               ],
             ),
@@ -300,7 +300,7 @@ class TopDriverChip extends StatelessWidget {
         decoration: BoxDecoration(
           color: cs.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: _riskColor.withOpacity(0.35)),
+          border: Border.all(color: _riskColor.withValues(alpha: 0.35)),
         ),
         width: 240,
         child: Column(
@@ -319,9 +319,9 @@ class TopDriverChip extends StatelessWidget {
               height: 8,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: _riskColor.withOpacity(0.18 + 0.65 * _t),
+                color: _riskColor.withValues(alpha: 0.18 + 0.65 * _t),
                 borderRadius: BorderRadius.circular(999),
-                border: Border.all(color: _riskColor.withOpacity(0.7)),
+                border: Border.all(color: _riskColor.withValues(alpha: 0.7)),
               ),
             ),
             const SizedBox(height: 8),

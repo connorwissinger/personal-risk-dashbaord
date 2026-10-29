@@ -28,7 +28,7 @@ class TopDriversNextStepsSectionState extends State<TopDriversNextStepsSection> 
   /// Remaining drivers in the guided queue (mutates on dismiss).
   late List<DriverFactor> _queue;
 
-  List<ExpansionTileController> _controllers = [];
+  List<ExpansibleController> _controllers = [];
   List<GlobalKey> _blockKeys = [];
 
   static const Color _impactLow = Color(0xFF16A34A);
@@ -70,9 +70,9 @@ class TopDriversNextStepsSectionState extends State<TopDriversNextStepsSection> 
   }
 
   void _rebuildControllers() {
-    _controllers = List<ExpansionTileController>.generate(
+    _controllers = List<ExpansibleController>.generate(
       _queue.length,
-      (_) => ExpansionTileController(),
+      (_) => ExpansibleController(),
     );
     _blockKeys = List<GlobalKey>.generate(
       _queue.length,
@@ -292,7 +292,7 @@ class _DriverMitigationBlock extends StatelessWidget {
 
   final DriverFactor driver;
   final List<String> scaleLabels;
-  final ExpansionTileController controller;
+  final ExpansibleController controller;
   final Color impactColor;
   final void Function(RiskCategory category) onOpenCategory;
   final void Function(bool expanded) onExpansionChanged;

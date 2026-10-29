@@ -77,8 +77,8 @@ class CategorySection extends StatelessWidget {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
 
-    final barColor = _riskColor.withOpacity(0.28);
-    final outlineColor = _riskColor.withOpacity(0.55);
+    final barColor = _riskColor.withValues(alpha: 0.28);
+    final outlineColor = _riskColor.withValues(alpha: 0.55);
     final double levelsSum =
         levels.isEmpty ? 0.0 : levels.reduce((a, b) => a + b);
     assert(
@@ -95,7 +95,7 @@ class CategorySection extends StatelessWidget {
       decoration: BoxDecoration(
         color: cs.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: outlineColor.withOpacity(0.35)),
+        border: Border.all(color: outlineColor.withValues(alpha: 0.35)),
       ),
       padding: const EdgeInsets.all(14),
       child: Column(
@@ -299,10 +299,10 @@ class _MiniImpactBar extends StatelessWidget {
             height: 10,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: riskColor.withOpacity(0.18 + 0.65 * t),
+              color: riskColor.withValues(alpha: 0.18 + 0.65 * t),
               borderRadius: BorderRadius.circular(999),
               border: Border.all(
-                color: riskColor.withOpacity(0.65),
+                color: riskColor.withValues(alpha: 0.65),
               ),
             ),
           ),
